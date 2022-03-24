@@ -44,6 +44,9 @@ const auth = new google.auth.GoogleAuth({
 
 // });
 
+app.get("/", function (req, res) {
+  res.send("Welcome 🤗😁");
+});
 
 app.get("/getAllBatches", async (req, res) => {
 
