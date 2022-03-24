@@ -120,7 +120,7 @@ app.get("/getAllBatches", async (req, res) => {
 
 
 
-app.get("/getByRangeDataSheet1PW", async (req, res) => {
+app.get("/getSubjectData", async (req, res) => {
     // console.log(req.body);
     const range = req.fields?.range || req.query?.range;
 
@@ -138,7 +138,7 @@ app.get("/getByRangeDataSheet1PW", async (req, res) => {
     var readData = await googleSheetsInstance.spreadsheets.get({
         auth, //auth object
         spreadsheetId: "1rwkKRFMCl2-iZxnJg1yY7NcEa4z_HtGOEFuByTOZ5Lg", // spreadsheet id
-        ranges: ["Sheet1!" + range], //range of cells to read from.,
+        ranges: [range], //range of cells to read from.,
         includeGridData: true
     })
 
