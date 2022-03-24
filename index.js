@@ -147,7 +147,7 @@ app.get("/getSubjectData", async (req, res) => {
     var rowData = readData[0].rowData;
 
     var the_real_row_data = rowData.filter((item) => {
-        if ((0 in item.values && "formattedValue" in item.values[0] && "hyperlink" in item.values[0]) && item.values[0].formattedValue != "Class Cancelled") {
+        if ((0 in item.values && "formattedValue" in item.values[0]) && item.values[0].formattedValue != "Class Cancelled") {
             return true; // skip
         }
         return false;
