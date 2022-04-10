@@ -124,6 +124,7 @@ app.get("/getSubjectData", async (req, res) => {
     // console.log(req.body);
     const range = req.fields?.range || req.query?.range;
 
+    if(range){
     var authobj = fs.readFileSync('token.json');
     authobj = JSON.parse(authobj);
 
@@ -203,7 +204,9 @@ app.get("/getSubjectData", async (req, res) => {
     });
 
     res.send(JSON.stringify(finalData));
-
+    }else{
+    res.send('send range');
+    }
 });
 
 
