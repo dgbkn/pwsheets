@@ -120,11 +120,17 @@ app.get("/getAllBatches", async (req, res) => {
 
 
 
-app.get("/getSubjectData", async (req, res,next) => {
+app.get("/getSubjectData", async (req, res) => {
     // console.log(req.body);
 
-    if(req.query?.delay){
-setTimeout(() => next(), 5000);
+    if(req.query.delay){
+    const sleep = async () => {
+        await new Promise(async (resolve) => {
+          setTimeout(() => resolve(), 5000);
+        });
+      };
+
+      await sleep();
 }
 
     const range = req.fields?.range || req.query?.range;
