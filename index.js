@@ -169,9 +169,10 @@ app.get("/getSubjectData", async (req, res) => {
                   var finadItem = e.snippet;
                   var thumbs = finadItem.thumbnails;
                   return {
-                      title:finadItem.title,
+                      name:finadItem.title,
                       thumb:thumbs[Object.keys(thumbs)[Object.keys(thumbs).length - 1]].url,
                       videoId:finadItem.resourceId.videoId,
+                      lecture:`https://ytdl.shreeram4.repl.co/direct?url=${finadItem.resourceId.videoId}&index=${index}&e=.mp4`
                   };
               });
 
