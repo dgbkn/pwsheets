@@ -138,7 +138,7 @@ app.get("/getSubjectData", async (req, res) => {
 
     if (range) {
 
-        if (range.includes("yt^") && range.includes('@')) {
+        if (range.includes("yt^")) {
              
             var playlistData = range.split('^');
             var index = 2 in playlistData ?  playlistData[2] : 0;
