@@ -89,7 +89,7 @@ app.get("/getAllBatches", async (req, res) => {
             }
 
             if (1 in item.values) {
-                var subparts = item.values[1].formattedValue.split("-");
+                var subparts = item.values[1].formattedValue.includes("yt^") ? item.values[1].formattedValue.split("@") : item.values[1].formattedValue.split("-");
                 var subparts = subparts.filter((item) => {
                     if (item == "") {
                         return false;
