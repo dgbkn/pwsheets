@@ -13,7 +13,7 @@ const { GoogleSpreadsheet } = require('google-spreadsheet');
 const creds = require('./keys.json');
 
 
-//initilize express
+//initilize expresss
 const app = express();
 
 // app.use(bodyParser.json());
