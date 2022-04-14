@@ -171,7 +171,7 @@ app.get("/getSubjectData", async (req, res) => {
                   return {
                       name:finadItem.title,
                       description:finadItem.description,
-                      thumb:typeof thumbs[Object.keys(thumbs)[Object.keys(thumbs).length - 1]].url === 'undefined' ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFzCfRhbjyor9E6NQfWWk9rYfUctTG90aOtw&usqp=CAU' : thumbs[Object.keys(thumbs)[Object.keys(thumbs).length - 1]].url,
+                      thumb:!('url' in thumbs[Object.keys(thumbs)[Object.keys(thumbs).length - 1]].url) ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFzCfRhbjyor9E6NQfWWk9rYfUctTG90aOtw&usqp=CAU' : thumbs[Object.keys(thumbs)[Object.keys(thumbs).length - 1]].url,
                       videoId:finadItem.resourceId.videoId,
                       lecture:`https://www.youtube.com/embed/${finadItem.resourceId.videoId}?origin=https://plyr.io&iv_load_policy=3&modestbranding=1&playsinline=1&showinfo=0&rel=0&enablejsapi=1&e=.embed`
 //                       lecture:`https://ytdl.shreeram4.repl.co/direct?url=${finadItem.resourceId.videoId}&index=${index}&e=.mp4`
