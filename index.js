@@ -166,7 +166,9 @@ app.get("/getSubjectData", async (req, res) => {
               apiData = await apiData.json();
 
               apiData = apiData.items.map((e)=>{
+
                   var finadItem = e.snippet;
+                  console.log(finadItem);
                   var thumbs = finadItem.thumbnails;
                   return {
                       name:finadItem.title,
