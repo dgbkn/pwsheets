@@ -127,7 +127,7 @@ app.get("/getSubjectData", async (req, res) => {
     if (req.query.delay) {
         const sleep = async () => {
             await new Promise(async (resolve) => {
-                setTimeout(() => resolve(), 15000);
+                setTimeout(() => resolve(), 3000);
             });
         };
 
